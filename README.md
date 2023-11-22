@@ -16,8 +16,8 @@ removing the GTK dependency and support for legacy linux system tray.
 ```go
 package main
 
-import "github.com/energye/systray"
-import "github.com/energye/systray/icon"
+import "github.com/secoba/systray"
+import "github.com/secoba/systray/icon"
 
 func main() {
 	systray.Run(onReady, onExit)
