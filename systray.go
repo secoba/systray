@@ -116,11 +116,11 @@ func RunWithExternalLoop(onReady, onExit func()) (start, end func()) {
 	Register(onReady, onExit)
 
 	// https://github.com/slytomcat/systray/blob/master/systray.go
-	//return nativeStart, nativeEnd
-	return nativeStart, func() {
-		nativeEnd()
-		Quit()
-	}
+	return nativeStart, nativeEnd
+	//return nativeStart, func() {
+	//	nativeEnd()
+	//	Quit()
+	//}
 }
 
 // Register initializes GUI and registers the callbacks but relies on the
