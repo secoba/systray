@@ -115,6 +115,7 @@ func SetOnRClick(fn func(menu IMenu)) {
 func RunWithExternalLoop(onReady, onExit func()) (start, end func()) {
 	Register(onReady, onExit)
 
+	// https://github.com/slytomcat/systray/blob/master/systray.go
 	return nativeStart, nativeEnd
 	//return nativeStart, func() {
 	//	nativeEnd()

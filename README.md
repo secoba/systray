@@ -110,16 +110,17 @@ SystrayApp.app/
 If bundling manually, you may want to add one or both of the following to your Info.plist:
 
 ```xml
-	<!-- avoid having a blurry icon and text -->
-	<key>NSHighResolutionCapable</key>
-	<string>True</string>
+    <!-- avoid having a blurry icon and text -->
+<key>NSHighResolutionCapable</key>
+<string>True</string>
 
-	<!-- avoid showing the app on the Dock -->
-	<key>LSUIElement</key>
-	<string>1</string>
+  <!-- avoid showing the app on the Dock -->
+<key>LSUIElement</key>
+<string>1</string>
 ```
 
-Consult the [Official Apple Documentation here](https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFBundles/BundleTypes/BundleTypes.html#//apple_ref/doc/uid/10000123i-CH101-SW1).
+Consult
+the [Official Apple Documentation here](https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFBundles/BundleTypes/BundleTypes.html#//apple_ref/doc/uid/10000123i-CH101-SW1).
 
 ## Credits
 
