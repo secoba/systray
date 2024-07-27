@@ -57,34 +57,33 @@ package systray
 // // SetIcon sets the systray icon.
 // // iconBytes should be the content of .ico for windows and .ico/.jpg/.png
 // // for other platforms.
-//
-//	func SetIcon(iconBytes []byte) {
-//		instance.lock.Lock()
-//		instance.iconData = iconBytes
-//		props := instance.props
-//		conn := instance.conn
-//		defer instance.lock.Unlock()
-//
-//		if props == nil {
-//			return
-//		}
-//
-//		props.SetMust("org.kde.StatusNotifierItem", "IconPixmap", []PX{convertToPixels(iconBytes)})
-//
-//		if conn == nil {
-//			return
-//		}
-//
-//		err := notifier.Emit(conn, &notifier.StatusNotifierItem_NewIconSignal{
-//			Path: path,
-//			Body: &notifier.StatusNotifierItem_NewIconSignalBody{},
-//		})
-//		if err != nil {
-//			log.Printf("systray error: failed to emit new icon signal: %s\n", err)
-//			return
-//		}
-//	}
-//
+func SetIcon(iconBytes []byte) {
+	//		instance.lock.Lock()
+	//		instance.iconData = iconBytes
+	//		props := instance.props
+	//		conn := instance.conn
+	//		defer instance.lock.Unlock()
+	//
+	//		if props == nil {
+	//			return
+	//		}
+	//
+	//		props.SetMust("org.kde.StatusNotifierItem", "IconPixmap", []PX{convertToPixels(iconBytes)})
+	//
+	//		if conn == nil {
+	//			return
+	//		}
+	//
+	//		err := notifier.Emit(conn, &notifier.StatusNotifierItem_NewIconSignal{
+	//			Path: path,
+	//			Body: &notifier.StatusNotifierItem_NewIconSignalBody{},
+	//		})
+	//		if err != nil {
+	//			log.Printf("systray error: failed to emit new icon signal: %s\n", err)
+	//			return
+	//		}
+}
+
 // // SetTitle sets the systray title, only available on Mac and Linux.
 //
 //	func SetTitle(t string) {
@@ -120,24 +119,23 @@ package systray
 //
 // // SetTooltip sets the systray tooltip to display on mouse hover of the tray icon,
 // // only available on Mac and Windows.
-//
-//	func SetTooltip(tooltipTitle string) {
-//		instance.lock.Lock()
-//		instance.tooltipTitle = tooltipTitle
-//		props := instance.props
-//		defer instance.lock.Unlock()
-//
-//		if props == nil {
-//			return
-//		}
-//		dbusErr := props.Set("org.kde.StatusNotifierItem", "ToolTip",
-//			dbus.MakeVariant(tooltip{V2: tooltipTitle}))
-//		if dbusErr != nil {
-//			log.Printf("systray error: failed to set ToolTip prop: %s\n", dbusErr)
-//			return
-//		}
-//	}
-//
+func SetTooltip(tooltipTitle string) {
+	//		instance.lock.Lock()
+	//		instance.tooltipTitle = tooltipTitle
+	//		props := instance.props
+	//		defer instance.lock.Unlock()
+	//
+	//		if props == nil {
+	//			return
+	//		}
+	//		dbusErr := props.Set("org.kde.StatusNotifierItem", "ToolTip",
+	//			dbus.MakeVariant(tooltip{V2: tooltipTitle}))
+	//		if dbusErr != nil {
+	//			log.Printf("systray error: failed to set ToolTip prop: %s\n", dbusErr)
+	//			return
+	//		}
+}
+
 // // SetTemplateIcon sets the icon of a menu item as a template icon (on macOS). On Windows and
 // // Linux, it falls back to the regular icon bytes.
 // // templateIconBytes and regularIconBytes should be the content of .ico for windows and
