@@ -48,12 +48,11 @@ package systray
 // // to a regular icon on other platforms.
 // // templateIconBytes and iconBytes should be the content of .ico for windows and
 // // .ico/.jpg/.png for other platforms.
-//
-//	func SetTemplateIcon(templateIconBytes []byte, regularIconBytes []byte) {
-//		// TODO handle the templateIconBytes?
-//		SetIcon(regularIconBytes)
-//	}
-//
+func SetTemplateIcon(templateIconBytes []byte, regularIconBytes []byte) {
+	//		// TODO handle the templateIconBytes?
+	//		SetIcon(regularIconBytes)
+}
+
 // // SetIcon sets the systray icon.
 // // iconBytes should be the content of .ico for windows and .ico/.jpg/.png
 // // for other platforms.
@@ -85,38 +84,37 @@ func SetIcon(iconBytes []byte) {
 }
 
 // // SetTitle sets the systray title, only available on Mac and Linux.
-//
-//	func SetTitle(t string) {
-//		instance.lock.Lock()
-//		instance.title = t
-//		props := instance.props
-//		conn := instance.conn
-//		defer instance.lock.Unlock()
-//
-//		if props == nil {
-//			return
-//		}
-//		dbusErr := props.Set("org.kde.StatusNotifierItem", "Title",
-//			dbus.MakeVariant(t))
-//		if dbusErr != nil {
-//			log.Printf("systray error: failed to set Title prop: %s\n", dbusErr)
-//			return
-//		}
-//
-//		if conn == nil {
-//			return
-//		}
-//
-//		err := notifier.Emit(conn, &notifier.StatusNotifierItem_NewTitleSignal{
-//			Path: path,
-//			Body: &notifier.StatusNotifierItem_NewTitleSignalBody{},
-//		})
-//		if err != nil {
-//			log.Printf("systray error: failed to emit new title signal: %s\n", err)
-//			return
-//		}
-//	}
-//
+func SetTitle(t string) {
+	//		instance.lock.Lock()
+	//		instance.title = t
+	//		props := instance.props
+	//		conn := instance.conn
+	//		defer instance.lock.Unlock()
+	//
+	//		if props == nil {
+	//			return
+	//		}
+	//		dbusErr := props.Set("org.kde.StatusNotifierItem", "Title",
+	//			dbus.MakeVariant(t))
+	//		if dbusErr != nil {
+	//			log.Printf("systray error: failed to set Title prop: %s\n", dbusErr)
+	//			return
+	//		}
+	//
+	//		if conn == nil {
+	//			return
+	//		}
+	//
+	//		err := notifier.Emit(conn, &notifier.StatusNotifierItem_NewTitleSignal{
+	//			Path: path,
+	//			Body: &notifier.StatusNotifierItem_NewTitleSignalBody{},
+	//		})
+	//		if err != nil {
+	//			log.Printf("systray error: failed to emit new title signal: %s\n", err)
+	//			return
+	//		}
+}
+
 // // SetTooltip sets the systray tooltip to display on mouse hover of the tray icon,
 // // only available on Mac and Windows.
 func SetTooltip(tooltipTitle string) {
@@ -140,10 +138,10 @@ func SetTooltip(tooltipTitle string) {
 // // Linux, it falls back to the regular icon bytes.
 // // templateIconBytes and regularIconBytes should be the content of .ico for windows and
 // // .ico/.jpg/.png for other platforms.
-//
-//	func (item *MenuItem) SetTemplateIcon(templateIconBytes []byte, regularIconBytes []byte) {
-//		item.SetIcon(regularIconBytes)
-//	}
+func (item *MenuItem) SetTemplateIcon(templateIconBytes []byte, regularIconBytes []byte) {
+	//		item.SetIcon(regularIconBytes)
+}
+
 func setInternalLoop(_ bool) {
 	// nothing to action on Linux
 }

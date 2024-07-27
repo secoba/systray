@@ -16,17 +16,16 @@ package systray
 //
 // // SetIcon sets the icon of a menu item.
 // // iconBytes should be the content of .ico/.jpg/.png
-//
-//	func (item *MenuItem) SetIcon(iconBytes []byte) {
-//		instance.menuLock.Lock()
-//		defer instance.menuLock.Unlock()
-//		m, exists := findLayout(int32(item.id))
-//		if exists {
-//			m.V1["icon-data"] = dbus.MakeVariant(iconBytes)
-//			refresh()
-//		}
-//	}
-//
+func (item *MenuItem) SetIcon(iconBytes []byte) {
+	//		instance.menuLock.Lock()
+	//		defer instance.menuLock.Unlock()
+	//		m, exists := findLayout(int32(item.id))
+	//		if exists {
+	//			m.V1["icon-data"] = dbus.MakeVariant(iconBytes)
+	//			refresh()
+	//		}
+}
+
 // // copyLayout makes full copy of layout
 //
 //	func copyLayout(in *menuLayout, depth int32) *menuLayout {
